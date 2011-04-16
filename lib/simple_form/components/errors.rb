@@ -24,7 +24,8 @@ module SimpleForm
       end
 
       def errors_on_attribute
-        Array(object.errors[attribute_name])
+        errors = Array(object.errors[attribute_name])
+        errors || []
       end
 
       def errors_on_association
